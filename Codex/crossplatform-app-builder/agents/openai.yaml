@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cross-platform App Builder"
+  short_description: "Build and debug adaptive Flutter apps"
+  default_prompt: "Use $crossplatform-app-builder to build, debug, or ship this Flutter application across web and mobile."
