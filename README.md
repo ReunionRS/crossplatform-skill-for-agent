@@ -1,27 +1,26 @@
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/openai/white">
-    <img src="https://cdn.simpleicons.org/openai/000000" width="96" alt="OpenAI logo">
-  </picture>
+  <img src="assets/openai-logo.png" width="520" alt="OpenAI logo">
 
   # Cross-platform App Builder for Codex
 
-  Практический Codex Skill для разработки одного Flutter-приложения под web и mobile.
+  A practical Codex Skill for building a single Flutter application for web and mobile.
+
+  **English** · [Русский](README.ru.md)
 </div>
 
-## Что умеет skill
+## What this skill does
 
-- проектировать адаптивные Flutter-интерфейсы вместо масштабирования desktop-версии;
-- находить lifecycle-ошибки, нестабильные streams и гонки при быстрой навигации;
-- связывать Firebase Auth, Firestore-схему, realtime-слушатели, роли и Security Rules;
-- реализовывать общие чаты, контакты, группы и task boards с корректными правами;
-- поддерживать светлую/тёмную тему, пользовательские фоны и доступный контраст;
-- добавлять i18n через ARB и Flutter localization delegates;
-- проверять, собирать и выпускать web/mobile-версии без утечки приватных ключей.
+- designs adaptive Flutter interfaces instead of merely scaling a desktop layout;
+- diagnoses lifecycle errors, unstable streams, and race conditions during rapid navigation;
+- aligns Firebase Auth, Firestore schemas, realtime listeners, roles, and Security Rules;
+- supports shared chats, contacts, groups, and task boards with consistent permissions;
+- preserves accessible contrast across light and dark themes and user-selected backgrounds;
+- implements internationalization with ARB files and Flutter localization delegates;
+- verifies, builds, and releases web/mobile applications without exposing private credentials.
 
-Workflow основан на evidence-led подходе из `mega-orchestrator`: сначала воспроизводится реальное состояние и прослеживается источник данных, затем вносится минимальное связное изменение и проверяется итоговая сборка.
+The workflow adapts the evidence-led approach from `mega-orchestrator`: reproduce the actual state and trace its data source first, then make the smallest cohesive change and verify the resulting application.
 
-## Структура
+## Structure
 
 ```text
 Codex/
@@ -34,22 +33,24 @@ Codex/
         └── release-checklist.md
 ```
 
-## Установка в Codex
+## Install in Codex
 
 ```powershell
 git clone https://github.com/ReunionRS/crossplatform-skill-for-agent.git
 Copy-Item -Recurse .\crossplatform-skill-for-agent\Codex\crossplatform-app-builder "$env:CODEX_HOME\skills\crossplatform-app-builder"
 ```
 
-Если `CODEX_HOME` не задан, используйте `%USERPROFILE%\.codex\skills\crossplatform-app-builder`. После установки перезапустите Codex.
+If `CODEX_HOME` is not defined, use `%USERPROFILE%\.codex\skills\crossplatform-app-builder`. Restart Codex after copying the skill.
+
+Invoke it explicitly with:
 
 ```text
-$crossplatform-app-builder Исправь адаптивную раскладку чатов на web и mobile и проверь Firestore-права.
+$crossplatform-app-builder Fix the adaptive chat layout on web and mobile, then verify the Firestore permissions.
 ```
 
-Skill также поддерживает автоматический выбор для подходящих задач.
+The skill also supports automatic selection for matching tasks.
 
-## Технологии
+## Technologies
 
 <p>
   <img src="https://cdn.simpleicons.org/flutter/02569B" height="34" alt="Flutter">
@@ -60,8 +61,8 @@ Skill также поддерживает автоматический выбо�
   <img src="https://cdn.simpleicons.org/googlechrome/4285F4" height="34" alt="Web">
 </p>
 
-## Использование
+## Usage notice
 
-Skill является инструкцией для Codex и не включает исходный код конкретного приложения, Firebase-проект или секреты. Проверяйте сгенерированные изменения, правила доступа и целевое окружение перед production-деплоем.
+This skill provides instructions for Codex. It does not contain the source code of a particular application, a Firebase project, or credentials. Review generated changes, access rules, and the selected environment before a production deployment.
 
-OpenAI и Codex являются товарными знаками соответствующих правообладателей. Этот репозиторий — независимый community-проект и не является официальным продуктом OpenAI.
+OpenAI and Codex are trademarks of their respective owners. This repository is an independent community project and is not an official OpenAI product.
